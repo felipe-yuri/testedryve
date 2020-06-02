@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Teste Dryve - Desafio 1b</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    
+	function validarCampos(){
+		var numero = document.getElementById('valor').value;
+	   	  if(numero == undefined || numero == null || numero == ''){
+	   	    alert('Digite um número inteiro para calcular a quantidade de notas');
+	   	    return false;
+	   	  }
+	}
+	
+	function calcular(){
+		if (validarCampos() == false){
+			return false;
+		}
+		document.formulario.submit();
+	}
+		
+		
+  </script>
+  
+</head>
+<body class="container">
+
+	<div class="card-panel teal lighten-2" align="center">
+		<h1>Teste Dryve</h1>
+	</div>
+	<div class="card-panel teal lighten-2 #bdbdbd grey lighten-1" align="left">
+		<span><i class="material-icons left">assignment_ind</i>Desafio 1b - Quantidade de notas</span>
+	</div>
+	<table class="responsive-table">
+		<thead>
+			<tr>
+				<th>Valor</th>
+				<th>Notas 100</th>
+				<th>Notas 50</th>
+				<th>Notas 20</th>
+				<th>Notas 10</th>
+				<th>Notas 5</th>
+				<th>Notas 2</th>
+				<th>Notas 1</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="nota : ${notas}">
+				<td><span th:text="${nota.valor}" style="color: #e91e63"></span></td>
+				<td><span th:text="${nota.notas100}"></span></td>
+				<td><span th:text="${nota.notas50}"></span></td>
+				<td><span th:text="${nota.notas20}"></span></td>
+				<td><span th:text="${nota.notas10}"></span></td>
+				<td><span th:text="${nota.notas5}"></span></td>
+				<td><span th:text="${nota.notas2}"></span></td>
+				<td><span th:text="${nota.notas1}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row">
+		<form name="formulario" action="/desafio1b/calcularnotas" class="col s12" method="GET">
+			<div class="input-field col s12">
+				<label>Valor inteiro:</label><br>
+				<input type="text" id="valor" name="valor">
+			</div>
+			<div class="input-field col s6">
+				<a class="btn waves-effect waves-light #e91e63 pink" href="/"><i class="material-icons left">backspace</i>Votlar</a>
+				<button class="btn waves-effect waves-light" type="button" onClick="calcular()"><i class="material-icons right">send</i>Calcular</button><br><br>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
