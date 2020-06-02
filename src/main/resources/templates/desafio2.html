@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Teste Dryve - Desafio 2</title>
   <meta charset="UTF-8"/>
@@ -15,9 +15,27 @@
       $('select').material_select();
     });
     
-	function voltar(){
-		window.history.go(-1);
+	function validarCampos(){
+		var inteiro = document.getElementById('n').value;
+		var sequencia = document.getElementById('seq').value;
+	   	  if(inteiro == undefined || inteiro == null || inteiro == ''){
+	   	    alert('Digite um número inteiro');
+	   	    return false;
+	   	  }
+	   	  if(sequencia == undefined || sequencia == null || sequencia == ''){
+		   	    alert('Digite uma sequência de inteiros');
+		   	    return false;
+		   	  }
 	}
+	
+	function cadastrar(){
+		if (validarCampos() == false){
+			return false;
+		}
+		document.formulario.submit();
+	}
+		
+		
   </script>
   
 </head>
@@ -27,11 +45,36 @@
 		<h1>Teste Dryve</h1>
 	</div>
 	<div class="card-panel teal lighten-2 #bdbdbd grey lighten-1" align="left">
-		<span><i class="material-icons left">assignment_ind</i>Desafio 2 - Serviço de cadastro</span>
+		<span><i class="material-icons left">assignment_ind</i>Desafio 2 - Cadastrar Anúncio</span>
 	</div>
-		<div class="input-field col s12">
-		<a class="btn waves-effect waves-light #e91e63 pink" href="javascript:voltar();"><i class="material-icons left">backspace</i>Back</a>
-		<button class="btn waves-effect waves-light" type="submit">Register<i class="material-icons right">send</i></button><br><br>
+	<div class="row">
+		<form name="formulario" action="/desafio2/cadastrar" class="col s12" method="POST">
+			
+			<div class="input-field col s12">
+				<label>Placa do automóvel:</label><br>
+				<input type="text" id="placa" name="placa">
+			</div>
+			<div class="input-field col s12">
+				<label>ID Marca:</label><br>
+				<input type="text" id="idMarca" name="idMarca">
+			</div>
+			<div class="input-field col s12">
+				<label>ID Modelo:</label><br>
+				<input type="text" id="idModelo" name="idModelo">
+			</div>
+			<div class="input-field col s12">
+				<label>Preço:</label><br>
+				<input type="text" id="preco" name="preco">
+			</div>
+			<div class="input-field col s12">
+				<label>Ano:</label><br>
+				<input type="text" id="ano" name="ano">
+			</div>
+			<div class="input-field col s6">
+				<a class="btn waves-effect waves-light #e91e63 pink" href="/"><i class="material-icons left">backspace</i>Votlar</a>
+				<button class="btn waves-effect waves-light" type="button" onClick="cadastrar()"><i class="material-icons right">send</i>Cadastrar</button><br><br>
+			</div>
+		</form>
 	</div>
 </body>
 </html>
