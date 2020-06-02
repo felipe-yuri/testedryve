@@ -17,13 +17,13 @@ Ao invés de instalar a aplicação, pode-se usa-la diretamente da nuvem heroku,
 - JDK 1.8+
 - IDE Java (*recomendável*: Eclipse 2020+) 
 
-1. Clonar repositório utilizando o comando abaixo.
+#### 1. Clonar repositório utilizando o comando abaixo.
 
 ```bash
 git clone https://github.com/felipys24/testedryve.git
 ```
 
-2. Importar o projeto na IDE de preferência.
+#### 2. Importar o projeto na IDE de preferência.
 
 ![import01](https://user-images.githubusercontent.com/40077229/83555969-84298100-a4e5-11ea-873e-deb7a9101f61.png)
 
