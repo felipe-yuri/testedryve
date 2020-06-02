@@ -32,19 +32,12 @@
 		}
 		document.formulario.submit();
 	}
-	
-	function sucesso(){
-		var msg = document.getElementById('msgSucesso');
-		if (msg.innerText != ""){
-			alert('Anúncio cadastrado com sucesso!')
-		}
-	}
 		
 		
   </script>
   
 </head>
-<body class="container" onload="sucesso()">
+<body class="container">
 
 	<div class="card-panel teal lighten-2" align="center">
 		<h1>Teste Dryve</h1>
@@ -52,8 +45,6 @@
 	<div class="card-panel teal lighten-2 #bdbdbd grey lighten-1" align="left">
 		<span><i class="material-icons left">assignment_ind</i>Desafio 2 - Cadastrar Anúncio</span>
 	</div>
-	<span th:if="${sucesso} == true" hidden="true" id="msgSucesso">Cadastrado com sucesso!</span>
-	<span th:unless="${sucesso} == true"></span>
 	<div class="row">
 		<form name="formulario" action="/desafio2/cadastrar" class="col s12" method="POST">
 			
