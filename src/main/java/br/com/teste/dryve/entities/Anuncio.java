@@ -1,6 +1,9 @@
 package br.com.teste.dryve.entities;
 
-import java.util.Date;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,13 +12,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Anuncio {
+@Entity
+public class Anuncio implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
 	private String placa;
 	private float preco_anuncio;
 	private int ano;
 	private float preco_fipe;
-	private Date data_cadastro;
+	private String data_cadastro;
 	private String modelo;
 	private String marca;
 	
