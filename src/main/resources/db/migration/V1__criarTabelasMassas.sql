@@ -19,8 +19,8 @@ CREATE TABLE veiculo (
 	ano INT(4) NOT NULL,
 	preco_fipe DECIMAL NOT NULL,
 	data_cadastro DATE NOT NULL,
-	modelo VARCHAR NOT NULL,
-	marca VARCHAR NOT NULL,
+	modelo VARCHAR(255) NOT NULL,
+	marca VARCHAR(255) NOT NULL,
 	PRIMARY KEY (placa)
 );
 

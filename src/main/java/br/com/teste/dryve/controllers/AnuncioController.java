@@ -45,7 +45,7 @@ public class AnuncioController {
 		Anuncio anuncio = new Anuncio(placa, preco, ano, Float.parseFloat(preco_fipe), formato.format(data), "UNO", dadosFipe(idMarca, idModelo, ano).getMarca());
 		
 		//TODO modificar método e formulário para POST para poder salvar o resultado.
-//		repository.save(anuncio);
+		//repository.save(anuncio);
 		
 		return ResponseEntity.ok().body(anuncio);
 	}
