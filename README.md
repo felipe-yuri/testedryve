@@ -35,3 +35,21 @@ Execute a classe TesteDryveApplicationConfig.java como aplicação java. Como po
 
 ![import03](https://user-images.githubusercontent.com/40077229/83558454-74ac3700-a4e9-11ea-9d27-c44a447b86ec.png)
 
+## Acessar DataSource H2
+#### 1. Acessar a url
+```http
+http://localhost:8090/h2-console/
+```
+#### 2. Definir a *JDBC URL*
+```http
+jdbc:h2:mem:testdb
+```
+#### 3. Definir o *username*
+```http
+sa
+```
+#### 4. Definir o *password* (vazio)
+```http
+
+```
+![import04](https://user-images.githubusercontent.com/40077229/83642200-e7b6bb80-a584-11ea-9136-787828625ed8.png)
