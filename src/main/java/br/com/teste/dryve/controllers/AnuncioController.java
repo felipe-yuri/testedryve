@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,12 +25,12 @@ public class AnuncioController {
 	public VeiculoFipe dadosFipe(int idMarca, int idModelo, int ano) {
 		RestTemplate restTemplate = new RestTemplate();
 		String url = "http://fipeapi.appspot.com/api/1/carros/veiculo/"+ idMarca +"/" + idModelo + "/" + ano +"-1.json";
-		VeiculoFipe veiculoFipe = restTemplate.getForObject(url, VeiculoFipe.class);
+		VeiculoFipe veiculoFipe = restTemplate.getForObject(url, VeiculoFipe.class); 
 		
 		return veiculoFipe;
 	}
 
-	@GetMapping(value = "/desafio2/cadastrar")
+	@GetMapping(value = "/desafio2/cadastrar", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Anuncio> anuncio(
 			@RequestParam String placa,
 			@RequestParam int idMarca, 
@@ -42,8 +43,10 @@ public class AnuncioController {
 		SimpleDateFormat formato = new SimpleDateFormat("YYYY-MM-dd");
 		//TODO consultar banco para pegar o modelo
 		Anuncio anuncio = new Anuncio(placa, preco, ano, Float.parseFloat(preco_fipe), formato.format(data), "UNO", dadosFipe(idMarca, idModelo, ano).getMarca());
+		
 		//TODO modificar método e formulário para POST para poder salvar o resultado.
-		repository.save(anuncio);
+//		repository.save(anuncio);
+		
 		return ResponseEntity.ok().body(anuncio);
 	}
 
