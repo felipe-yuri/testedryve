@@ -5,7 +5,11 @@ Essa é uma aplicação front/back-end desenvolvida para a empresa Dryve. Tem co
 >Autor : Felipe Yuri Silva  
 >Email : felipys@gmail.com
 
-## Tecnologias utilizadas (dependências)
+## Tecnologias e dependências
+- Java 8
+- HTML5
+- Javascript
+- Materialize (CSS3)
 - Spring Boot 2.3
 - Lombok
 - JPA
