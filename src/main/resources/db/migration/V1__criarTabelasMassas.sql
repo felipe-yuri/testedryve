@@ -12,6 +12,7 @@ CREATE TABLE modelo (
 	id_marca VARCHAR(255),
 	PRIMARY KEY (id)
 );
+ALTER TABLE modelo ADD FOREIGN KEY (id_marca) REFERENCES marca (id);
 
 CREATE TABLE veiculo (
 	placa VARCHAR(255) NOT NULL,
@@ -41,5 +42,7 @@ INSERT INTO modelo (id, name, fipe_id, id_marca) VALUES ('b1c9a613-29ee-4171-a5f
 INSERT INTO modelo (id, name, fipe_id, id_marca) VALUES ('828bd4bf-ea80-4449-bf8f-154cda91d864', 'Astra Eleg. 2.0 MPFI FlexPower 8V 5p Aut', '940', 'e66e8451-a442-4344-bbd9-17f249d9eea4');
 INSERT INTO modelo (id, name, fipe_id, id_marca) VALUES ('cc0b4033-9624-400d-b45d-84cceb7e0441', 'Celta Life 1.0 MPFI VHC 8V 3p', '997', 'e66e8451-a442-4344-bbd9-17f249d9eea4');
 INSERT INTO modelo (id, name, fipe_id, id_marca) VALUES ('7a9e2990-b356-40e6-b0b5-c26d38e3f5bb', 'Meriva Joy 1.8 MPFI 8V FlexPower', '1093', 'e66e8451-a442-4344-bbd9-17f249d9eea4');
+
+INSERT INTO modelo (id, name, fipe_id, id_marca) VALUES ('7a9e2990-b356-40e6-b0b5-c26d38e3f5b5', 'Palio 1.0 ECONOMY Fire Flex 8V 4p', '4828', 'ca43ec74-5bb0-4288-ab11-5df094ca4dc4');
 
 
