@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Teste Dryve - Anúncio</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    
+	
+  </script>
+  
+</head>
+<body class="container">
+
+	<div class="card-panel teal lighten-2" align="center">
+		<h1>Teste Dryve</h1>
+	</div>
+	<div class="card-panel #bdbdbd grey lighten-1" align="left">
+		<span><i class="material-icons left">assignment_ind</i>Desafio 2 - Anúncio</span>
+	</div>
+		<table class="responsive-table">
+		<thead>
+			<tr>
+				<th>Valor</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span th:text="${veiculoFipe}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="card-panel #b2ebf2 cyan lighten-4" align="left" th:each="veiculo : ${veiculoFipe}">
+		tr
+		<span th:text="${veiculoFipe}"></span>	
+	</div>
+	<div class="row">
+		<div class="input-field col s6">
+			<a class="btn waves-effect waves-light #e91e63 pink" href="/desafio2"><i class="material-icons left">backspace</i>Votlar</a>
+		</div>
+	</div>
+</body>
+</html>

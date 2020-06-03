@@ -32,4 +32,9 @@ public class MenuController {
 	public String desafio2() {
 		return "desafio2";
 	}
+	
+	@GetMapping(value = "/desafio2/veiculo/anuncio")
+	public String anuncio() {
+		return "anuncio";
+	}
 }
