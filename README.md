@@ -5,6 +5,14 @@ Essa é uma aplicação front/back-end desenvolvida para a empresa Dryve. Tem co
 >Autor : Felipe Yuri Silva  
 >Email : felipys@gmail.com
 
+## Tecnologias utilizadas (dependências)
+- Spring Boot 2.3
+- Lombok
+- JPA
+- Flyway Migrate
+- H2 Database
+- Thymeleaf
+
 
 ## Rodar aplicação no Heroku (*não é necessário instalar*)
 Ao invés de instalar a aplicação, pode-se usa-la diretamente da nuvem heroku, através do link [Teste Dryve - Heroku](https://testedryve.herokuapp.com/)
