@@ -5,7 +5,6 @@ CREATE TABLE marca (
 	PRIMARY KEY (id)
 );
 
-
 CREATE TABLE modelo (
 	id VARCHAR(255) NOT NULL,
 	name VARCHAR(255) NOT NULL,
@@ -13,6 +12,20 @@ CREATE TABLE modelo (
 	id_marca VARCHAR(255),
 	PRIMARY KEY (id)
 );
+
+CREATE TABLE veiculo (
+	placa VARCHAR(255) NOT NULL,
+	preco_anuncio DECIMAL NOT NULL,
+	ano INT(4) NOT NULL,
+	preco_fipe DECIMAL NOT NULL,
+	data_cadastro DATE NOT NULL,
+	modelo VARCHAR NOT NULL,
+	marca VARCHAR NOT NULL,
+	PRIMARY KEY (placa)
+);
+
+ALTER TABLE veiculo ADD FOREIGN KEY (modelo) REFERENCES marca (name);
+ALTER TABLE veiculo ADD FOREIGN KEY (marca) REFERENCES marca (name);
 
 INSERT INTO marca (id, name, fipe_id) VALUES ('ca43ec74-5bb0-4288-ab11-5df094ca4dc4', 'FIAT', 21);
 INSERT INTO marca (id, name, fipe_id) VALUES ('c0225595-e293-477b-8758-384872470f00', 'FORD', 22);
